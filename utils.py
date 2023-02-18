@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -43,6 +44,9 @@ def plot_frequency(ciphered, keylength):
                              sharey=True,
                              dpi=200
                              )
+
+    if keylength == 1:
+        axes = np.array(axes)
 
     for idx, letter_freq in enumerate(letter_freqs):
         letters = list(letter_freq.keys())

@@ -1,6 +1,6 @@
 # A basic demostration of the Vigenere cipher and the Kasiski examination
 
-The files `encrypt.py` and `decrypt.py` implement the [Vigenere cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher). `utils.py` implements a few helper functions that speeds up some key aspects of the [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination).
+The files `encrypt.py` and `decrypt.py` implement the [Vigenere cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher). `utils.py` implements a few helper functions that showcases key aspects of the [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination).
 
 `encrypt.py` requires the following command line arguments in order:
 
