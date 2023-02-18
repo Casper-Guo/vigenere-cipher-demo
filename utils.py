@@ -82,8 +82,9 @@ def find_identical(ciphered, word_length):
 def main():
     with open("ciphered.txt", "r") as ciphered_file:
         ciphered = ciphered_file.read()
-
-    print(find_identical(ciphered, 3))
+    
+    # Your own analysis here
+    
     return 0
 
 
