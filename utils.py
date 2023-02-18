@@ -60,7 +60,7 @@ def plot_frequency(ciphered, keylength):
                     ax=axes[idx] if keylength > 1 else axes
                     )
     plt.show()
-    return 0
+    return fig
 
 
 def find_identical(ciphered, word_length):
@@ -81,9 +81,6 @@ def find_identical(ciphered, word_length):
 
 def main():
     # Your own analysis here
-    with open("caesar_encrypted.txt", 'r') as f:
-        ciphered = f.read()
-    plot_frequency(ciphered, 1)
     return 0
 
 
