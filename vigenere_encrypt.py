@@ -1,16 +1,13 @@
-import os
 import sys
 import string
 
 
-def decrypt(idx, char, key):
-    assert char.isupper()
-
+def encrypt(idx, char, key):
     row = key[idx % len(key)]
     row_idx = string.ascii_uppercase.index(row)
     column_idx = string.ascii_uppercase.index(char)
 
-    return string.ascii_uppercase[(column_idx - row_idx) % 26]
+    return string.ascii_uppercase[(row_idx + column_idx) % 26]
 
 
 def main():
@@ -22,17 +19,16 @@ def main():
     key = sys.argv[3].upper()
 
     with open(sys.argv[1], 'r') as input_file:
-        ciphered = input_file.read()
+        plaintext = input_file.read()
 
-    decrypted = []
+    plaintext = [char.upper() for char in plaintext if char.isalpha()]
+    ciphered = []
 
-    for idx, char in enumerate(ciphered):
-        if not char.isalpha():
-            continue
-        decrypted.append(decrypt(idx, char.upper(), key))
+    for idx, char in enumerate(plaintext):
+        ciphered.append(encrypt(idx, char, key))
 
     with open(sys.argv[2], 'w+') as output_file:
-        output_file.write(''.join(decrypted))
+        output_file.write(''.join(ciphered))
 
     return 0
 

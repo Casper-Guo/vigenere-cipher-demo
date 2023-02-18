@@ -1,18 +1,18 @@
 # A basic demostration of the Vigenere cipher and the Kasiski examination
 
-The files `encrypt.py` and `decrypt.py` implement the [Vigenere cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher). `utils.py` implements a few helper functions that showcases key aspects of the [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination).
+The encrypt and decrypt files implement both Caesar and Vigenere cipher. `utils.py` implements a few helper functions that showcases key aspects of the [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination).
 
-`encrypt.py` requires the following command line arguments in order:
+Both encrypt files require the following command line arguments in order:
 
 - input-file: a text file.
 - output-file: a text file to store the encrypted text. If it doesn't exist, it will be created.
-- key: the encryption key for the Vigenere cipher.
+- key: the encryption key for the Vigenere cipher or the offset for the Caesar cipher.
 
-`decrypt.py` requires the following command line arguments in order:
+Both decrypt files require the following command line arguments in order:
 
 - input-file: a text file.
 - output-file: a text file to store the decrypted text. If it doesn't exist, it will be created.
-- key: the encryption key for the Vigenere cipher.
+- key: the encryption key for the Vigenere cipher or the offset for the Ceasar cipher.
 
 `utils.py` contains the following helper functions:
 

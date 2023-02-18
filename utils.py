@@ -24,7 +24,10 @@ def infer_key(ciphered, plaintext):
 
 
 def plot_frequency(ciphered, keylength):
-    """Plot letter frequencies with an assumed key length."""
+    """
+    Plot letter frequencies with an assumed key length.
+    Use keylength=1 for the letter frequency plot of the entire text.
+    """
     letter_sets = [[] for i in range(keylength)]
 
     for idx, char in enumerate(ciphered):
@@ -45,9 +48,6 @@ def plot_frequency(ciphered, keylength):
                              dpi=200
                              )
 
-    if keylength == 1:
-        axes = np.array(axes)
-
     for idx, letter_freq in enumerate(letter_freqs):
         letters = list(letter_freq.keys())
         freq = list(letter_freq.values())
@@ -57,7 +57,7 @@ def plot_frequency(ciphered, keylength):
         sns.barplot(data=data,
                     x="letter",
                     y="freq",
-                    ax=axes[idx]
+                    ax=axes[idx] if keylength > 1 else axes
                     )
     plt.show()
     return 0
@@ -80,11 +80,10 @@ def find_identical(ciphered, word_length):
 
 
 def main():
-    with open("ciphered.txt", "r") as ciphered_file:
-        ciphered = ciphered_file.read()
-    
     # Your own analysis here
-    
+    with open("caesar_encrypted.txt", 'r') as f:
+        ciphered = f.read()
+    plot_frequency(ciphered, 1)
     return 0
 
 
