@@ -81,6 +81,10 @@ def find_identical(ciphered, word_length):
 
 def main():
     # Your own analysis here
+    with open("vigenere_encrypted.txt", 'r') as f:
+        ciphered = f.read()
+    # print(find_identical(ciphered, 3))
+    print(infer_key("USY", "THE"))
     return 0
 
 
